@@ -3,6 +3,9 @@ const path = require('path');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 
+// Add routes
+const foodRoutes = require('./routes/FoodRoutes');
+
 const app = express();
 
 // Load dotenv
@@ -26,6 +29,9 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
+
+// Routes
+app.use('/api', foodRoutes);
 
 
 app.get('/', (req, res) => {
