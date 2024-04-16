@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 const { initializeApp } = require("firebase/app");
 const { getAnalytics } =  require("firebase/analytics");
-const { getFirestore, collection, addDoc } = require("firebase/firestore");
+const { getFirestore, collection, addDoc, getDocs, getDoc} = require("firebase/firestore");
+const { get } = require("firebase/database");
 
 
 // dotenv init
@@ -25,4 +26,4 @@ const firebaseApp = initializeApp(firebaseConfig);
 // Get a reference to the Firestore service
 const db = getFirestore(firebaseApp);
 
-module.exports = {firebaseApp, db, collection, addDoc};
+module.exports = {firebaseApp, db, collection, addDoc, getDocs, getDoc};

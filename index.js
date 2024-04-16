@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const bodyParser = require('body-parser');
+const foodController = require('./controllers/FoodItemController');
 
 // Add routes
 const foodRoutes = require('./routes/FoodRoutes');
@@ -30,16 +31,24 @@ app.use(session({
     saveUninitialized: true
 }));
 
+
 // Routes
 app.use('/api', foodRoutes);
 
 
-app.get('/', (req, res) => {
-    res.render('main/index', {
-        'Title': "Track your Progress!",
-        caloriesintake:0,
-        foodintake:0
-    });
+app.get('/', async (req, res) => {
+    try {
+        const foods = await foodController.retrieveFoodsByUser(req, res);
+
+        res.render('main/index', {
+            'Title': "Track your Progress!",
+            caloriesintake: 0,
+            foodintake: 0,
+            foods: foods
+        });
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
 });
 
 

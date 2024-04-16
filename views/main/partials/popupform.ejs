@@ -1,11 +1,12 @@
 <div class="popup-form" id="popupForm">
     <div class="popup-content">
-        <span class="close" onclick="closeForm()">×</span>
+        <span class="close" id="close">×</span>
+        <h2>Add food</h2>
         <form id="foodForm" action="">
             <input type="text" name="food" id="food" placeholder="Enter food">
+            <input type="text" name="category" id="category" placeholder="Enter category">
             <input type="number" name="calories" id="calories" placeholder="Enter calories">
-            <input type="number" name="amount" id="amount" placeholder="Enter amount">
-            <button type="submit">Add</button>
+            <button type="button" id="submit">Add</button>
         </form>
     </div>
 </div>
