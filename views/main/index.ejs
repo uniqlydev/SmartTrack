@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track your Intake!</title>
+    <link rel="stylesheet" href="/styles/colors.css">
+    <link rel="stylesheet" href="/styles/main/index.css">
+    <link rel="stylesheet" href="/styles/main/popup_form.css">
+    <script src="/scripts/main/popup_form.js"></script>
+</head>
+<body>
+    <h1>Today</h1>
+    <div class="today-status">
+        <h3>Calories</h3>
+        <div class="container">
+            <div class="first-row">
+                <progress class="calories_intake" value="<%= caloriesintake %>"</progress> max="100"></progress>
+                <h4 class="label_text">
+                    Daily target
+                </h4>
+            </div>
+    
+            <div class="second-row">
+                <progress class="food_intake" value="<%= foodintake %>" max="100"></progress>
+                <h4 class="food-intake">Food intake</h4>
+            </div>
+        </div>
+
+        <!-- Add food intake -->
+
+        <div class="food-container">
+            <h3>Food Intake</h3>
+            <button class="add-food" onclick="openForm()">Add food</button>
+            <div class="food-area">
+                <ul>
+                    <li>
+                        <div class="food-item">
+                            <p class="food_name">Food Name</p>
+                            <p class="category">Lunch</p>
+                            <p class="calories">0</p>
+                            <p class="date">2019-20-2</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <%- include('partials/popupform.ejs') %>
+        </div>
+
+        
+    </div>
+</body>
+</html>

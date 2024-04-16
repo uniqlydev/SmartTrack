@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* Apply the imported font to elements */
+body {
+    font-family: 'Lato', sans-serif;
+
+    /* Center all elements and put elements on top of each other */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.first-row,
+.second-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.today-status {
+    width: 90%;
+
+    padding: 20px;
+}
+
+.today-status .first-row {
+    display: flex;
+    align-items: center;
+}
+
+.today-status .first-row > * {
+    margin-right: 20px;
+}
+
+.today-status .second-row {
+    display: flex;
+    align-items: center;
+}
+
+.today-status .second-row > * {
+    margin-right: 20px;
+}
+
+.calories_intake, .food_intake {
+    width: 80%;
+    height:30px;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.calories_intake::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+.calories_intake::-webkit-progress-value {
+    background-color: var(--calories-intake);
+    border-radius: 10px;
+}
+
+.food_intake::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+.food_intake::-webkit-progress-value {
+    background-color: var(--food-intake);
+    border-radius: 10px;
+}
+
+
+
+/* Food area */
+.food-container {
+    width: 100%;
+    margin-top: 50px;
+
+    /* Center all */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.food-container h3 {
+    align-self: flex-start;
+}
+
+
+.food-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.food-container ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.food-container ul li:last-child {
+    border-bottom: none;
+}
+
+/* Hover animations  */
+.food-container ul li:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+/* Add food button */
+.add-food {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--calories-intake);
+    border: 1px solid #eee;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+
+    font-size: 20px;
+}
+
+.food-area {
+    width: 80%;
+    margin: 20px auto;
+
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.food-item {
+    /* Make items inline centered */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 50px;
+
+    padding: 20px;
+}
+
+.food-item > * {
+    font-weight: bold;
+}
+
+.food-item p {
+    margin: 5px 0;
+}
+
+.food-name {
+    font-weight: bold;
+}
+
+.category {
+    color: var(--food-intake); /* PayPal blue color */
+}
+
+.calories {
+    font-weight: bold;
+    color: var(--calories-intake); /* Green color for positive values */
+}
+
+.date {
+    font-size: 0.8em;
+    color: #777;
+}
